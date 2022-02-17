@@ -25,27 +25,28 @@ we can have is 160.00 from the given
 capacity of sack.
 */
 
+#include<bits/stdc++.h>
+using namespace std;
 struct item
 {
 	int value;
 	int weight;
+};
+
+bool cmp(pair<int,int>a, pair<int,int>b)
+{
+    double x=(double)a.first/a.second;
+    double y=(double)b.first/b.second;
+    return(x>y);
 }
 
-struct comp{
-      bool operator()(pair<int,int>a, pair<int,int>b)
-      {
-          double x=(double)a.first/a.second;
-          double y=(double)b.first/b.second;
-          return(x>y);
-      }
-
-int fractionalknapsack(item arr[],int w,int n)
+int fractionalknapsack(item arr[],int W,int n)
 {
 	vector<pair<int,int>>v(n);
 	for(int i=0;i<n;i++)
 		v[i]={arr[i].value,arr[i].weight};
 	
-	sort(v.begin(),v.end(),cmp());
+	sort(v.begin(),v.end(),cmp);
 	double sum=0.0;
         for(int i=0;i<n;i++)
         {
@@ -61,7 +62,6 @@ int fractionalknapsack(item arr[],int w,int n)
             }
         }
         return sum;
-    }
 }
 
 int main()
@@ -71,5 +71,5 @@ int main()
 	item arr[n];
 	for(int i=0;i<n;i++)
 		cin>>arr[i].value>>arr[i].weight;
-	cout<<fractionalkanpsack(arr,n,weight);
+	cout<<fractionalknapsack(arr,n,weight);
 }
