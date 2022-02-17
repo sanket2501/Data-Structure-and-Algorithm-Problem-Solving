@@ -23,6 +23,8 @@ A person can perform activities 1, 2
 and 4.
 
 */
+#include<iostream>
+using namespace std;
 class Solution
 {
 	public:
