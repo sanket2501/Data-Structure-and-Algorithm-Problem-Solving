@@ -26,6 +26,8 @@ capacity of sack.
 */
 
 #include<bits/stdc++.h>
+#include<vector>
+
 using namespace std;
 struct item
 {
@@ -40,9 +42,15 @@ bool cmp(pair<int,int>a, pair<int,int>b)
     return(x>y);
 }
 
-int fractionalknapsack(item arr[],int W,int n)
+int main()
 {
-	vector<pair<int,int>>v(n);
+	int n,W;
+	cin>>n>>W;
+	item arr[n];
+	for(int i=0;i<n;i++)
+		cin>>arr[i].value>>arr[i].weight;
+
+    vector<pair<int,int>>v(n);
 	for(int i=0;i<n;i++)
 		v[i]={arr[i].value,arr[i].weight};
 	
@@ -57,19 +65,8 @@ int fractionalknapsack(item arr[],int W,int n)
             }
             else
             {
-                sum=sum+(double)W*v[i].first/v[i].second;
-                break;
+                sum=(double)sum+(double)W*v[i].first/v[i].second;
             }
         }
-        return sum;
-}
-
-int main()
-{
-	int n,weight;
-	cin>>n>>weight;
-	item arr[n];
-	for(int i=0;i<n;i++)
-		cin>>arr[i].value>>arr[i].weight;
-	cout<<fractionalknapsack(arr,n,weight);
+	cout<<sum;
 }
