@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.php": "bat",
+        "iostream": "cpp"
+    }
+}

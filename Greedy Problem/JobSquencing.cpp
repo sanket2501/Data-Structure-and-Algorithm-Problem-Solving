@@ -24,3 +24,52 @@ Explanation:
 2 jobs can be done with
 maximum profit of 127 (100+27).
 */
+#include<bits/stdc++.h>
+#include<vector>
+#define rep(i,a,b) for(int i=a;i<b;i++)
+using namespace std;
+struct item
+{
+        int id;
+        int dead;
+        int profit;
+};
+
+static bool cmp(item a,item b)
+{
+        return a.profit>b.profit;
+}
+int main()
+{
+        int n;
+        cin>>n;
+        item arr[n];
+
+        rep(i,0,n)
+        {
+             cin>>arr[i].id>>arr[i].dead>>arr[i].profit;   
+        }
+        
+        sort(arr,arr+n,cmp);
+
+        vector<int>v(n,false);
+        int profitsum=0;
+        int count=0;
+        for(int i=0;i<n;i++)
+        {
+                for(int j=arr[i].dead-1;j>=0;j--)
+                {
+                        if(v[j]==true)
+                                continue;
+                        else
+                        {
+                                v[j]=true;
+                                profitsum+=arr[i].profit;
+                                count++;
+                                break;
+                        }
+                }
+        }
+        cout<<profitsum<<" "<<count;
+      
+}
