@@ -68,5 +68,6 @@ int main()
                 sum=(double)sum+(double)W*v[i].first/v[i].second;
             }
         }
+        
 	cout<<sum;
 }
