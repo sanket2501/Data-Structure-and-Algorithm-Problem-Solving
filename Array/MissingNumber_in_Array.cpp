@@ -15,7 +15,8 @@ A[] = {6,1,2,8,3,4,7,10,5}
 Output: 9
 */
 
-//Solution 1st
+/*
+Solution 1st
 int MissingNumber(vector<int>& array, int n) {
     sort(array.begin(),array.end());
     int j=1;
@@ -28,7 +29,8 @@ int MissingNumber(vector<int>& array, int n) {
     }
 }    
 
-//Solution 2nd
+
+Solution 2nd
   int MissingNumber(int array[], int n) {        
     int actual = (n*(n+1)/2);
         int total = 0;
@@ -38,3 +40,4 @@ int MissingNumber(vector<int>& array, int n) {
         }
                 return actual- total;     
    }
+*/
