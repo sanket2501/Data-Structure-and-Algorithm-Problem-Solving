@@ -34,7 +34,8 @@ No water will be trapped.
 #include<bits/stdc++.h>
 using namespace std;
 
-long long trappingWater(int arr[], int n){
+long long trappingWater(int arr[], int n)
+{
     int left[n],right[n];
     int cal[n];
     long long sum=0;
