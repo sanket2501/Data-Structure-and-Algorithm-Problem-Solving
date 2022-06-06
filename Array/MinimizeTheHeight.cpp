@@ -27,6 +27,10 @@ The array can be modified as
 the largest and the smallest is 17-6 = 11. 
 
 */
+
+#include<bits/stdc++.h>
+using namespace std;
+
 int getMinDiff(int arr[], int n, int k) 
 {        
         sort(arr,arr+n);
