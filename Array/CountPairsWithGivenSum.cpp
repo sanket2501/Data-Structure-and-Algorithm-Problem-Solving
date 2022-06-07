@@ -40,3 +40,32 @@ T.C O(n^2)
 }
 */
 
+/*
+Approach 2nd Dynamic programming algorithm
+*/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ int getPairsCount(int arr[], int n, int k) {
+    unordered_map<int, int>mp;
+    int count=0;
+    
+    for(int i=0;i<n;i++)
+    {
+        if(mp[arr[i]])
+        {
+            count+=mp[arr[i]];
+        }
+        mp[k-arr[i]]++;
+    }
+    return count;
+}
+
+int main()
+{
+    int N = 4, K = 6;
+    int arr[] = {1, 5, 7, 1};
+    cout<<getPairsCount(arr,N,K);
+}
+
