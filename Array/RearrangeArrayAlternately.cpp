@@ -46,6 +46,7 @@ void rearrange(long long *arr, int n)
 
 T.C. O(n)
 S.C. O(1)
+YT https://www.youtube.com/watch?v=ZRoVWxBngX0
 */
 
 #include<bits/stdc++.h>
