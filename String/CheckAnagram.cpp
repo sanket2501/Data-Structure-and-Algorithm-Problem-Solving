@@ -19,12 +19,12 @@ Explanation:Characters in both the strings are
 #include<iostream>
 using namespace std;
 
-bool isAnagram(string a, string b){
+int isAnagram(string a, string b){
         
         int No_Of_Char =256;
         int arr[No_Of_Char]={0};
         if(a.length()!=b.length())
-            return false;
+            return 0;
         for(int i=0;i<a.length();i++)
         {
             arr[a[i]]++;
@@ -33,17 +33,16 @@ bool isAnagram(string a, string b){
         for(int i=0;i<No_Of_Char;i++)
         {
             if(arr[i]!=0)
-                return false;
+                return 0;
         }
-        return true;
+        return 1;
 }
 
 int main()
 {
     string s1,s2;
     cin>>s1>>s2;
-    if(isAnagram(s1,s2))
-        cout<<"Yes";
-    else
-        cout<<"No";
+    int result=(isAnagram(s1,s2));
+    cout<<result;
+        
 }
