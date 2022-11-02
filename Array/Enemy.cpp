@@ -26,6 +26,8 @@ Output:
 4
 Explanation:
 The cells (1,1),(1,2) ,(2,1) and (2,2) are free hence answer =4.
+
+ (n + m + k) total time, m+n extra space
 */
 
 #include<bits/stdc++.h>
@@ -36,7 +38,7 @@ int largestArea(int n,int m,int k,vector<vector<int>> &enemy)
     //  code here
     vector<int>row(n,0);
     vector<int>col(m,0);
-    for(int i=0;i<enemy.size();i++)
+    for(int i=0;i<k;i++)
     {
         row[enemy[i][0]-1]=-1;
         col[enemy[i][1]-1]=-1;
