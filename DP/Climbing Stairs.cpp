@@ -36,6 +36,7 @@ int climbStairs(int n) {
 }
 
 /*
+
 public int climbStairs(int n) {
     int firstStep = 0;
     int secondStep = 1;
